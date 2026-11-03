@@ -277,6 +277,18 @@ Data written in capital letters
      </div>
     </div>
     <pre>
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      Enter the file name from the user. Enter the data from the user till the user wants to enter the data. (Use gets)
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
 #include &lt;stdio.h&gt;
 void main() {
     char filename[100], data[100], ch;
@@ -287,4 +299,26 @@ void main() {
     do {
         printf("Enter the data: ");
         gets(data);
-        fprintf(fp, "%s\n",
+        fprintf(fp, "%s\n", data);
+        printf("Do you want to enter more data? (y/n): ");
+        ch = getchar();
+        getchar();
+    } while(ch == 'y' || ch == 'Y');
+    fclose(fp);
+    printf("Data saved in file");
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter file name: notes.txt
+Enter the data: Hello C
+Do you want to enter more data? (y/n): y
+Enter the data: File handling
+Do you want to enter more data? (y/n): n
+Data saved in file
+    </pre>
+   </section>
