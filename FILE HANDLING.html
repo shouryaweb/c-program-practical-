@@ -1,0 +1,290 @@
+<html>
+ <head>
+  <title>
+   C CODE HUB
+  </title>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body class="topic-page">
+  <header class="site-header">
+   <a class="home-link" href="index.html">
+    ← Home
+   </a>
+   <h1 class="page-title">
+    FILE HANDLING
+   </h1>
+  </header>
+  <main class="content">
+   <br/>
+   <br/>
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      1. Create a file and copy that file into another file.
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+void main() {
+    FILE *fp1, *fp2;
+    char ch;
+    fp1 = fopen("file1.txt", "w");
+    fputs("Hello C Language", fp1);
+    fclose(fp1);
+    fp1 = fopen("file1.txt", "r");
+    fp2 = fopen("file2.txt", "w");
+    while((ch = fgetc(fp1)) != EOF) {
+        fputc(ch, fp2);
+    }
+    fclose(fp1);
+    fclose(fp2);
+    printf("File copied successfully");
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+File copied successfully
+    </pre>
+   </section>
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      2. Create a file and rename the file.
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+void main() {
+    FILE *fp;
+    fp = fopen("old.txt", "w");
+    fputs("Hello C Language", fp);
+    fclose(fp);
+    if(rename("old.txt", "new.txt") == 0)
+        printf("File renamed successfully");
+    else
+        printf("Error in renaming file");
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+File renamed successfully
+    </pre>
+   </section>
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      3. Create two files and concatenate them into a 3rd file.
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+void main() {
+    FILE *fp1, *fp2, *fp3;
+    char ch;
+    fp1 = fopen("file1.txt", "w");
+    fputs("Hello ", fp1);
+    fclose(fp1);
+    fp2 = fopen("file2.txt", "w");
+    fputs("World", fp2);
+    fclose(fp2);
+    fp1 = fopen("file1.txt", "r");
+    fp2 = fopen("file2.txt", "r");
+    fp3 = fopen("file3.txt", "w");
+    while((ch = fgetc(fp1)) != EOF) {
+        fputc(ch, fp3);
+    }
+    while((ch = fgetc(fp2)) != EOF) {
+        fputc(ch, fp3);
+    }
+    fclose(fp1);
+    fclose(fp2);
+    fclose(fp3);
+    printf("Files concatenated successfully");
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Files concatenated successfully
+(file3.txt contains: Hello World)
+    </pre>
+   </section>
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      4. Create a file and count the number of characters in the file.
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+void main() {
+    FILE *fp;
+    char ch;
+    int count = 0;
+    fp = fopen("file1.txt", "w");
+    fputs("Hello World", fp);
+    fclose(fp);
+    fp = fopen("file1.txt", "r");
+    while((ch = fgetc(fp)) != EOF) {
+        count++;
+    }
+    fclose(fp);
+    printf("Number of characters = %d", count);
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Number of characters = 11
+    </pre>
+   </section>
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      5. Create a file and count the number of words in the file.
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+void main() {
+    FILE *fp;
+    char ch;
+    int words = 0, inword = 0;
+    fp = fopen("file1.txt", "w");
+    fputs("I love C language", fp);
+    fclose(fp);
+    fp = fopen("file1.txt", "r");
+    while((ch = fgetc(fp)) != EOF) {
+        if(ch == ' ' || ch == '\n' || ch == '\t') {
+            inword = 0;
+        }
+        else if(inword == 0) {
+            inword = 1;
+            words++;
+        }
+    }
+    fclose(fp);
+    printf("Number of words = %d", words);
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Number of words = 4
+    </pre>
+   </section>
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      6. Enter the file name from the user. Enter the data from the user and put the data in the file, but the data should be in capital letters.
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+void main() {
+    char filename[100], data[100];
+    int i;
+    FILE *fp;
+    printf("Enter file name: ");
+    scanf("%s", filename);
+    printf("Enter the data: ");
+    scanf("%s", data);
+    fp = fopen(filename, "w");
+    for(i = 0; data[i] != '\0'; i++) {
+        fputc(toupper(data[i]), fp);
+    }
+    fclose(fp);
+    printf("Data written in capital letters");
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter file name: test.txt
+Enter the data: hello
+Data written in capital letters
+(test.txt contains: HELLO)
+    </pre>
+   </section>
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      7. Enter the file name from the user. Enter the data from the user till the user wants to enter the data. (Use gets)
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+void main() {
+    char filename[100], data[100], ch;
+    FILE *fp;
+    printf("Enter file name: ");
+    gets(filename);
+    fp = fopen(filename, "w");
+    do {
+        printf("Enter the data: ");
+        gets(data);
+        fprintf(fp, "%s\n",
