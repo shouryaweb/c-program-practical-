@@ -35,11 +35,11 @@
 void main(){
     int i;
     printf("enter number: ");
-    scanf("%d",&amp;i);
-    if(i&lt;0){
+    scanf("%d",&amp;a);
+    if(a&lt;0){
         printf("number is negative");
     }
-    else if(i&gt;0){
+    else if(a&gt;0){
         printf("number is positive");
     }
     else{
@@ -53,7 +53,7 @@ void main(){
      </div>
     </div>
     <pre>
-enter number: -55
+enter number: -23
 number is negative
     </pre>
     <!--2nd-->
@@ -61,7 +61,7 @@ number is negative
    <section class="question-card">
     <div class="question-title">
      <h2 class="question-heading">
-      2.Enter a number from user and check it is odd or even ?
+      2.Enter a number from user and check it is positive ?
      </h2>
     </div>
     <div class="code-panel">
@@ -70,12 +70,12 @@ number is negative
      </div>
     </div>
     <pre>
-#include &lt;stdio.h&gt;
+#include <stdio.h>;
 void main(){
-    int x;
+    int a;
     printf("enter number");
-    scanf("%d",&amp;x);
-    if(x&gt;=0){
+    scanf("%d",&amp;a);
+    if(a&gt;=0){
         printf("number is positive");
     }
     else{
@@ -109,7 +109,7 @@ number is positive
 #include &lt;stdio.h&gt;
  void main(){
  int x;
- printf("enter number: ");
+ printf("enter number from user: ");
  scanf("%d",&amp;x);
  if(x&gt;=-9&amp;&amp;x&lt;=9){
     printf("number is of one digit");
@@ -136,8 +136,8 @@ number is positive
      </div>
     </div>
     <pre>
-enter number: 6543
-number is of four digits
+enter number: 12345
+number is of five digits
     </pre>
     <!--4th-->
    </section>
@@ -157,19 +157,19 @@ number is of four digits
     <pre>
 #include &lt;stdio.h&gt;
 void main(){
-    int x;
+    int c;
     printf("enter marks: ");
-    scanf("%d",&amp;x);
+    scanf("%d",&amp;c);
     if(x&gt;=0&amp;&amp;x&lt;=40){
         printf("FAIL");
     }
-    else if(x&gt;=40&amp;&amp;x&lt;=60){
+    else if(c&gt;=40&amp;&amp;c&lt;=60){
         printf("C GRADE");
     }
-    else if(x&gt;=60&amp;&amp;x&lt;=80){
+    else if(c&gt;=60&amp;&amp;c&lt;=80){
         printf("B GRADE");
     }
-    else if(x&gt;=80&amp;&amp;x&lt;=100){
+    else if(c&gt;=80&amp;&amp;c&lt;=100){
         printf("A GRADE");
     }
     else{
@@ -184,7 +184,7 @@ void main(){
      </div>
     </div>
     <pre>
-enter marks: 90
+enter marks: 95
 A GRADE
     </pre>
     <!--5th-->
@@ -222,7 +222,7 @@ void main(){
      </div>
     </div>
     <pre>
-enter number: 12.6
+enter number: 15.6
 it is a decimal number
     </pre>
     <!--6th-->
@@ -242,16 +242,16 @@ it is a decimal number
     <pre>
 #include &lt;stdio.h&gt;
 void main(){
-    int x;
+    int t;
     printf("enter a number");
-    scanf("%d",&amp;x);
-    if(x&gt;=0){
-        x=-x;
-        printf("negative is %d",x);
+    scanf("%d",&amp;t);
+    if(t&gt;=0){
+        t=-t;
+        printf("negative is %d",t);
     }
     else{
-        x=-x;
-        printf("positive is %d",x);
+        t=-t;
+        printf("positive is %d",t);
     }
 }
     </pre>
@@ -261,8 +261,8 @@ void main(){
      </div>
     </div>
     <pre>
-enter a number 2
-negative is -2
+enter a number 4
+negative is -4
     </pre>
     <!--7th-->
    </section>
@@ -281,7 +281,7 @@ negative is -2
 #include &lt;stdio.h&gt;
 void main(){
 char x;
-    printf("enter character: ");
+    printf("enter character from user: ");
     scanf("%c",&amp;x);
     if(x&gt;='a'&amp;&amp;x&lt;='z'||x&gt;='A'&amp;&amp;x&lt;='Z'){
         printf("IS A CHARACTER");
@@ -297,7 +297,7 @@ char x;
      </div>
     </div>
     <pre>
-  enter character: A
+  enter character: C
 IS A CHARACTER
     </pre>
     <br/>
@@ -933,7 +933,7 @@ difference = 18 years 6 months 15 days
      </div>
     </div>
     <pre>
-enter length: 4
+enter length: 5
 enter width: 2
 area is 8.000000
 perimeter is 16.000000
