@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C CODE HUB</title>
+</head>
+<body>
+
+    <h1>Recursion in C Language</h1>
+
+    <h2>Question</h2>
+    <p>
+       1.Write a C program using recursion to print numbers
+        from 1 to 5 and then print the letter A.
+        
+    </p>
+
+    <h2>CODE</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int x = 1;
+
+void fun()
+{
+    if (x &lt;= 5)
+    {
+        printf("%d", x);
+        x++;
+        fun();
+    }
+
+    printf("A");
+}
+
+void main()
+{
+    fun();
+}
+    </pre>
+
+    <h2>Output</h2>
+    <pre>
+12345AAAAAA
+    </pre>
+
+
+
+
+
+  
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      2. Write a program of recursion and display the output.
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+int fact(int n) {
+    if(n == 0 || n == 1)
+        return 1;
+    return n * fact(n - 1);
+}
+void main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &amp;n);
+    printf("Factorial = %d", fact(n));
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter a number: 5
+Factorial = 120
+    </pre>
+   </section>
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      3. Write a program of recursion with global variable and display the output.
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+int sum = 0;   // global variable
+void add(int n) {
+    if(n == 0)
+        return;
+    sum = sum + n;
+    add(n - 1);
+}
+void main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &amp;n);
+    add(n);
+    printf("Sum of first %d numbers = %d", n, sum);
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter a number: 5
+Sum of first 5 numbers = 15
+    </pre>
+   </section>
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      4. Write a program of recursion with local variable and display the output.
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+int sum(int n) {
+    int result;   // local variable
+    if(n == 0)
+        return 0;
+    result = n + sum(n - 1);
+    return result;
+}
+void main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &amp;n);
+    printf("Sum of first %d numbers = %d", n, sum(n));
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter a number: 5
+Sum of first 5 numbers = 15
+    </pre>
+   </section>
+
+  </main>
+ </body>
+</html>
+</body>
+</html>
