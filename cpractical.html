@@ -8,13 +8,12 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: lightyellow;
-        }
+            font-family:'Bebas Neue', sans-serif;;
+            background-color: #fff8dc;       }
 
         .c-header {
-            background-color: rosybrown;
-            color: white;
+            background-color: white;
+            color:black;
             text-align: center;
             padding: 30px;
         }
@@ -25,35 +24,41 @@
         }
 
         .topic-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 30px;
+            text-align: center;
+            padding: 20px;
         }
 
         .topic {
-            background-color: royalblue;
+            display: inline-block;
+            background-color: black;
             color: white;
-            width: 220px;
-            padding: 25px;
-            border-radius: 12px;
+            width: 320px;
+            padding: 45px;
+            margin: 20px;
+            border-radius: 52px;
             text-align: center;
             text-decoration: none;
+            vertical-align: top;
+        }
+
+        body > .topic {
+            display: block;
+            margin: 10px auto;
         }
 
         .back-box {
             text-align: center;
-            margin-bottom: 30px;
+            margin: 30px 0;
         }
 
         .back-button {
-            background-color: royalblue;
+            background-color: #8b5e3c;
             color: white;
             border: none;
             padding: 10px 25px;
             border-radius: 8px;
             font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -106,12 +111,12 @@
 
         <a href="multiarray.html" class="topic">
             <h3>MULTIARRAY</h3>
-            <p>4 Questions</p>
+            <p> Questions</p>
         </a>
 
         <a href="decisioncontrol.html" class="topic">
             <h3>decisioncontrol</h3>
-            <p>22 Questions</p></a>
+            <p> Questions</p></a>
     </div>
      <a href="RECURSION.html" class="topic">
             <h3>RECURSION</h3>
@@ -121,7 +126,11 @@
             <h3>FILE HANDLING</h3>
             <p> Questions</p></a>
     </div>
-  
+   </div>
+     <a href="POINTER.html" class="topic">
+            <h3>POINTER</h3>
+            <p> Questions</p></a>
+    </div>
 
     <div class="back-box">
         <a href="index.html">
