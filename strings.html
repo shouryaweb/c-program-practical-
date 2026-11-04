@@ -280,301 +280,574 @@ Enter the string1 you like: hello
 copied string2:  hello
     </pre>
 <hr/>
-  
-<h2>10. Enter the string from user ,enter a number from user ,if the user enter 0 then you will print first character of string ,if the user
-   enter 1 then you will print second character of string ,if user enter 2 then you will print third character of string ,if user enter 3 then 
-   you point fourth character of string and if out of string then you will print out of bound ?</h2>
-    <h3>Code:</h3>
-    <pre>
-#include &lt;stdio.h&gt;
-#include &lt;strings.h&gt;
-void main(){
-char str[50];
-int l,d;
-printf("Enter the string you like: ");
-gets(str);
-l=strlen(str);
-printf("which character you want you print(index): ");
-scanf("%d",&amp;d);
-if (d&lt;0) printf("Please enter a number greater than or equal to 0 only");
-else if(d<l)printf("%c",str[d]); <="" bound");="" else="" of="" pre="" printf("out="" }="">
-    <h3>Output:</h3>
-    <pre>
-Enter the string you like: hello
-which character you want you print(index): 1
-e
-    </pre>
-<hr/>
-  
-<h2>11. Enter the string from user and print each character in new line ?</h2>
-    <h3>Code:</h3>
-    <pre>
-#include &lt;stdio.h&gt;
-#include &lt;Strings.h&gt;
-void main(){
-char str[50];
-int i;
-printf("Enter the string: ");
-gets(str);
-printf("Here are each character in new line:\n");
-for(i=0;str[i];i++){
-printf("%c\n",str[i]);
-}
-}
-</pre>
-    <h3>Output:</h3>
-    <pre>
-Enter the string: hello
-Here are each character in new line:
-h
-e
-l
-l
-o
-    </pre>
-<hr/>
-  
-<h2>12. Enter the string from user and copy reverse order into another string ?</h2>
-    <h3>Code:</h3>
-    <pre>
-#include &lt;stdio.h&gt;
-#include &lt;strings.h&gt;
-void main(){
-char str1[50],str2[50];
-int i,l;
-printf("Enter the string 1: ");
-gets(str1);
-l=strlen(str1);
-for(i=0;str1[i];i++){
-str2[i]=str1[l-1-i];
-}
-str2[i]=0;
-printf("Here is the string2(reverese of string1): %s",str2);
+<html>
+ <head>
+  <title>
+   C CODE HUB
+  </title>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body class="topic-page">
+  <header class="site-header">
+   <a class="home-link" href="cpractical.html">
+    ← Home
+   </a>
+   <h1 class="page-title">
+    STRINGS
+   </h1>
+  </header>
+  <main class="content">
+   <br/>
+   <br/>
 
-}
+   <!-- QUESTION 10 -->
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      10. Enter a string and a number from user. If the number is 0 print the first character, 1 the second character, 2 the third character, 3 the fourth character, and if it is out of the string print out of bound
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;string.h&gt;
 
-</pre>
-    <h3>Output:</h3>
-    <pre>
-Enter the string 1: hello
-Here is the string2(reverese of string1): olleh
-    </pre>
-<hr/>
+void main()
+{
+    char text[50];
+    int pos;
+    clrscr();
+    printf("enter a string: ");
+    fgets(text,sizeof(text),stdin);
 
-<h2>13. Enter two string from user and print difference each character ?</h2>
-    <h3>Code:</h3>
-    <pre>
-#include &lt;stdio.h&gt;
-#include &lt;strings.h&gt;
-void main(){
-char a[100],b[100];
-int i;
-printf("enter 1st str: ");
-gets(a);
-printf("enter 2nd str: ");
-gets(b);
-for(i=0;a[i]!='\0'&amp;&amp;b[i]!='\0';i++)
-printf("%d ",a[i]-b[i]);
+    if(text[strlen(text)-1]=='\n')
+    {
+        text[strlen(text)-1]='\0';
+    }
+    printf("Enter a number: ");
+    scanf("%d",&amp;pos);
+    if(pos&gt;=0&amp;&amp;pos&lt;strlen(text))
+    {
+        printf("Character at index %d is '%c'\n",pos,text[pos]);
+    }
+    else
+    {
+        printf("Out of bound\n");
+    }
 }
-}
-</pre>
-    <h3>Output:</h3>
-    <pre>
-enter 1st str: hello
-enter 2nd str: bye
-6 -20 7
     </pre>
-<hr/>
-  
-  
-<h2>14. Enter the string from user and enter a character , it is exist or not ?</h2>
-    <h3>Code:</h3>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
     <pre>
-#include &lt;stdio.h&gt;
-#include &lt;strings.h&gt;
-void main(){
-char a[100],ch;
-int i,found=0;
-printf("enter str: ");
-gets(a);
-printf("enter char: ");
-scanf("%c",&amp;ch);
-for(i=0;a[i]!='\0';i++){
-if(a[i]==ch){
-found=1;
-break;
-}
-}
-if(found==1)
-printf("exist");
-else
-printf("not exist");
-}
-</pre>
-    <h3>Output:</h3>
-    <pre>
-enter str: hello
-enter char: h
-exist
+enter a string: hello
+Enter a number: 2
+Character at index 2 is 'l'
     </pre>
-<hr/>
-
-  
-<h2>15. Enter the string from user and enter a character if it is exist then print the bound number?</h2>
-    <h3>Code:</h3>
-    <pre>
-#include &lt;stdio.h&gt;
-#include &lt;strings.h&gt;
-void main(){
-char a[100],ch;
-int i,found=-1;
-printf("enter str: ");
-gets(a);
-printf("enter char: ");
-scanf("%c",&amp;ch);
-for(i=0;a[i]!='\0';i++){
-if(a[i]==ch){
-found=i;
-break;
-}
-}
-if(found!=-1)
-printf("bound %d",found);
-else
-printf("not exist");
-}
-</pre>
-    <h3>Output:</h3>
-    <pre>
-enter str: hello
-enter char: e
-bound 1
-    </pre>
-<hr/>
-
-  
-<h2>16. Enter the string from user and count all vowels ?</h2>
-    <h3>Code:</h3>
-    <pre>
-#include &lt;stdio.h&gt;
-#include &lt;strings.h&gt;
-void main(){
-char str[50];
-int i,v=0;
-printf("Enter the string you like: ");
-gets(str);
-for(i=0;str[i];i++){
-if((str[i]=='a')||(str[i]=='e')||(str[i]=='i')||(str[i]=='o')||(str[i]=='u')||(str[i]=='A')||(str[i]=='E')||(str[i]=='I')||(str[i]=='O')||(str[i]=='U'))
-v+=1;
-}
-printf("Total number of vowels in string: %d",v);
-}
-</pre>
-    <h3>Output:</h3>
-    <pre>
-Enter the string you like: helloo
-Total number of vowels in string: 3
-    </pre>
-<hr/>
-
-  
-<h2>17. Enter the string from user and enter bound number and print character on that bound ?</h2>
-    <h3>Code:</h3>
-    <pre>
-#include &lt;stdio.h&gt;
-#include &lt;strings.h&gt;
-void main(){
-char str[50];
-int i,b=0;
-printf("Enter the string you like: ");
-gets(str);
-printf("Enter the bound number: ");
-scanf("%d",&amp;b);
-printf("The character on the bound is : %c",str[b]);
-}
-</pre>
-    <h3>Output:</h3>
-    <pre>
-Enter the string you like: hello
-Enter the bound number: 1
-The character on the bound is : e
-    </pre>
-<hr/>
-
-  
-<h2>18. String palindrome example (using reverse) ?</h2>
-    <h3>Code:</h3>
-    <pre>
-#include &lt;stdio.h&gt;
-#include &lt;strings.h&gt;
-void main(){
-char str1[50],str2[50];
-int i,l;
-printf("Pallindrome are words that spells the same forward and backward for example \nNITIN,NAMAN and MOM\n");
-printf("Enter any word to check if it is a pallindrome: ");
-gets(str1);
-l=strlen(str1);
-for(i=0;str1[i];i++){
-str2[i]=str1[l-1-i];
-}
-str2[i]=0;
-l=strcmp(str1,str2);
-if(l==0)printf("That is a pallindrome");
-else printf("That is not a pallindrome");
-}
-</pre>
-    <h3>Output:</h3>
-    <pre>
-Pallindrome are words that spells the same forward and backward for example
-NITIN,NAMAN and MOM
-Enter any word to check if it is a pallindrome: sus
-That is a pallindrome
-    </pre>
-<hr/>
-
-  
- <h2>19. Enter the data from user the data consist of roll no. ,name ,class , marks of 5 subjects ?</h2>
-    <h3>Code:</h3>
-    <pre>
-#include &lt;stdio.h&gt;
-#include &lt;strings.h&gt;
-void main(){
-char name[25],roll[7],clas[7],mark[5][2];
-printf("Enter all the details below\n");
-printf("Enter your name: ");
-gets(name);
-printf("Enter the roll number: ");
-gets(roll);
-printf("Enter the marks of these 5 subject:\n");
-printf("English: ");
-gets(mark[0]);
-printf("Physics: ");
-gets(mark[1]);
-printf("Chemistry: ");
-gets(mark[2]);
-printf("Biology: ");
-gets(mark[3]);
-printf("physical Education: ");
-gets(mark[4]);
-printf("Press any key to submit");
-}
-</pre>
-    <h3>Output:</h3>
-    <pre>
-Enter all the details below
-Enter your name: sarah
-Enter the roll number: 4213
-Enter the marks of these 5 subject:
-English: 90
-Physics: 90
-Chemistry: 90
-Biology: 90
-physical Education: 90
-Press any key to submit
-    </pre>
-<hr/>
-</l)printf("%c",str[d]);></pre></pre>
    </section>
+
+   <!-- QUESTION 11 -->
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      11. Enter the string from the user and print each character in a new line
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;string.h&gt;
+
+void main()
+{
+    char word[50];
+    int k;
+    clrscr();
+    printf("enter a string: ");
+    fgets(word,sizeof(word),stdin);
+
+    if(word[strlen(word)-1]=='\n')
+    {
+        word[strlen(word)-1]='\0';
+    }
+    printf("\n Character in the string: \n");
+    for(k=0;k&lt;strlen(word);k++)
+    {
+        printf("%c\n",word[k]);
+    }
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+enter a string: BCA
+
+ Character in the string:
+B
+C
+A
+    </pre>
+   </section>
+
+   <!-- QUESTION 12 -->
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      12. Enter the string from the user and copy it in reverse order into another string
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;string.h&gt;
+
+void main()
+{
+    char org[50],rev[50];
+    int k,n;
+    clrscr();
+    printf("enter a string: ");
+    fgets(org,sizeof(org),stdin);
+    if(org[strlen(org)-1]=='\n')
+    {
+        org[strlen(org)-1]='\0';
+    }
+    n=strlen(org);
+    for(k=0;k&lt;n;k++)
+    {
+        rev[k]=org[n-1-k];
+    }
+    rev[n]='\0';
+    printf("Reversed string: %s\n",rev);
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+enter a string: hello
+Reversed string: olleh
+    </pre>
+   </section>
+
+   <!-- QUESTION 13 -->
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      13. Enter two strings from the user and print the difference of each character
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;string.h&gt;
+
+void main()
+{
+    char first[50],second[50];
+    int k;
+    clrscr();
+    printf("enter first string: ");
+    gets(first);
+    printf("enter second string: ");
+    gets(second);
+    printf("\n Difference of each charcter (ASCII): \n");
+    for(k=0;first[k]!='\0'&amp;&amp;second[k]!='\0';k++)
+    {
+        printf("'%c'-'%c'=%d\n",first[k],second[k],first[k]-second[k]);
+    }
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+enter first string: hello
+enter second string: world
+
+ Difference of each charcter (ASCII):
+'h'-'w'=-15
+'e'-'o'=-10
+'l'-'r'=-6
+'l'-'l'=0
+'o'-'d'=11
+    </pre>
+   </section>
+
+   <!-- QUESTION 14 -->
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      14. Enter a string from the user and enter a character, check whether it exists or not
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;string.h&gt;
+
+void main()
+{
+    char line[50],target;
+    int k,flag=0;
+    clrscr();
+    printf("Enter a string:");
+    fgets(line,sizeof(line),stdin);
+    if(line[strlen(line)-1]=='\n')
+    {
+        line[strlen(line)-1]='\0';
+    }
+    printf("Enter a character to search: ");
+    scanf("%c",&amp;target);
+    for(k=0;line[k]!='\0';k++)
+    {
+        if(line[k]==target)
+        {
+            flag=1;
+            break;
+        }
+    }
+    if(flag)
+        printf("Character '%c' exists in the string.\n",target);
+    else
+        printf("Character '%c' does not exist in the string.\n",target);
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter a string:hello world
+Enter a character to search: o
+Character 'o' exists in the string.
+    </pre>
+   </section>
+
+   <!-- QUESTION 15 -->
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      15. Enter the string from the user and enter a character, if it exists then print its position
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;string.h&gt;
+
+void main()
+{
+    char word[50],find;
+    int k,flag=0;
+    clrscr();
+    printf("Enter a string: ");
+    fgets(word,sizeof(word),stdin);
+    if(word[strlen(word)-1]=='\n')
+    {
+        word[strlen(word)-1]='\0';
+    }
+    printf("Enter a character to search: ");
+    scanf("%c",&amp;find);
+    for(k=0;word[k]!='\0';k++)
+    {
+        if(word[k]==find)
+        {
+            printf("Character '%c' found at position %d\n",find,k);
+            flag=1;
+            break;
+        }
+    }
+    if(!flag)
+    {
+        printf("Character '%c' not found in the string.\n",find);
+    }
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter a string: programming
+Enter a character to search: g
+Character 'g' found at position 3
+    </pre>
+   </section>
+
+   <!-- QUESTION 16 -->
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      16. Enter the string from user and count all vowels
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;string.h&gt;
+
+void main()
+{
+    char s[100];
+    int k,total=0;
+    clrscr();
+    printf("Enter a string: ");
+    fgets(s,sizeof(s),stdin);
+    s[strcspn(s,"\n")]=0;
+    for(k=0;s[k];k++)
+    {
+        switch(s[k])
+        {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
+                total++;
+                break;
+        }
+    }
+    printf("vowels count :%d\n",total);
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter a string: Hello World
+vowels count :3
+    </pre>
+   </section>
+
+   <!-- QUESTION 17 -->
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      17. Enter the string from the user and enter a bound number, print the character at that bound
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;string.h&gt;
+
+void main()
+{
+    char sentence[100];
+    int place;
+    clrscr();
+    printf("Enter a string: ");
+    fgets(sentence,sizeof(sentence),stdin);
+    sentence[strcspn(sentence,"\n")]=0;
+    printf("Enter the bound (index): ");
+    scanf("%d",&amp;place);
+    if(place&gt;=0&amp;&amp;place&lt;strlen(sentence))
+    {
+        printf("Character at index %d: %c\n",place,sentence[place]);
+    }
+    else
+    {
+        printf("Invalid index.index out of bounds.\n");
+    }
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter a string: computer
+Enter the bound (index): 3
+Character at index 3: p
+    </pre>
+   </section>
+
+   <!-- QUESTION 18 -->
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      18. String palindrome example (using reverse)
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;string.h&gt;
+
+void main()
+{
+    char word[50],rev[50];
+    int k,n;
+    clrscr();
+    printf("Enter a string: ");
+    fgets(word,sizeof(word),stdin);
+    word[strcspn(word,"\n")]=0;
+    n=strlen(word);
+    for(k=0;k&lt;n;k++)
+    {
+        rev[k]=word[n-1-k];
+    }
+    rev[n]='\0';
+    if(strcmp(word,rev)==0)
+    {
+        printf("%s is a palindrome\n",word);
+    }
+    else
+    {
+        printf("%s is not a palindrome\n",word);
+    }
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter a string: madam
+madam is a palindrome
+    </pre>
+   </section>
+
+   <!-- QUESTION 19 -->
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      19. Enter the data from the user, the data consists of roll no., name, class, marks of 5 subjects
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    int rn,sub[5],k,sum=0;
+    char sname[50],cls[20];
+    float avg;
+    clrscr();
+    printf("Enter roll number: ");
+    scanf("%d",&amp;rn);
+
+    printf("Enter name:");
+    scanf("%s",sname);
+
+    printf("Enter class:");
+    scanf("%s",cls);
+
+    printf("Enter marks of 5 subjects: \n");
+    for(k=0;k&lt;5;k++)
+    {
+        printf("subject %d:",k+1);
+        scanf("%d",&amp;sub[k]);
+        sum+=sub[k];
+    }
+    avg=sum/5.0;
+
+    printf("\n---Student Details---\n");
+    printf("Roll No: %d\n",rn);
+    printf("Name: %s\n",sname);
+    printf("Class: %s\n",cls);
+    printf("Total Marks: %d\n",sum);
+    printf("Average Marks: %.2f\n",avg);
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter roll number: 101
+Enter name:Rahul
+Enter class:BCA
+Enter marks of 5 subjects:
+subject 1:80
+subject 2:75
+subject 3:90
+subject 4:85
+subject 5:70
+
+---Student Details---
+Roll No: 101
+Name: Rahul
+Class: BCA
+Total Marks: 400
+Average Marks: 80.00
+    </pre>
+   </section>
+
   </main>
  </body>
 </html>
