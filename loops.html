@@ -71,15 +71,34 @@ binary is: 0100
     </div>
     <pre>
 #include &lt;stdio.h&gt;
-void main(){
-    int c;
-    printf("enter  the number: ");
-    scanf("%d",&amp;c);
-    if(c%2==0||c%3==0||c%5==0||c%7==0||c%11==0){
-        printf("divisible by prime number");
-    }
-else{
-    printf("not divisible by the prime number");
+
+int prime(int n)
+{
+ int i;
+if(n<=1)
+for(i=2;i<=n/2;i++)
+{
+if(n%i==0);
+}
+}
+void main()
+{
+int num,i,flag=0;
+printf("Enter a number:");
+scanf("%d",&num);
+printf("\nPrime numbers that dividie %d are :",num);
+for(i=2;i<=num/2;i++)
+{
+if(prime(i)&&num%i==0)
+{
+printf("%d",i);
+flag=1;
+}
+}
+if(flag==0)
+printf("None (not divisible by any prime number)\n");
+else
+printf("\n%d is divisible by prime number listed above.\n",num);
 }
 }
     </pre>
