@@ -196,7 +196,12 @@ void main(){
      </div>
     </div>
     <pre>
-RAM x1 lakh times
+RAM 
+RAM
+RAM 
+RAM
+  .....
+     .....
     </pre>
     <!--6th-->
    </section>
@@ -890,21 +895,25 @@ alphabet
     <h3>Code:</h3>
     <pre>
 #include &lt;stdio.h&gt;
-void main(){
-int n,t,r,s=0;
-printf("enter no: ");
-scanf("%d",&amp;n);
-t=n;
-while(n&gt;0){
-r=n%10;
-s=s*10+r;
-n=n/10;
-}
-if(t==s)
-printf("palindrome");
+void main()
+{
+    int num,reversed=0,remainder,original;
+    clrscr();
+printf("Enter a number:");
+scanf("%d",&num);
+    original=num;
+        while(num!=0)
+        {
+            remainder=num%10;
+            reversed=reversed*10+remainder;
+            num=num/10;
+        }
+if(original==reversed)
+printf("%d is a palindrome number.\n",original);
 else
-printf("not palindrome");
+printf("%d is not a palidrome number.\n",original);
 }
+
     </pre>
     <h3>Output:</h3>
     <pre>
@@ -921,21 +930,27 @@ not palindrome
     <h3>Code:</h3>
     <pre>
 #include &lt;stdio.h&gt;
-void main(){
-int x,y=0,z,a;
-printf("enter no: ");
-scanf("%d",&amp;x);
-a=x;
-while(x&gt;0){
-z=x%10;
-y=y+(z*z*z);
-x=x/10;
+void main()
+{
+    int n,original,remainder,sum=0,digits=0;
+    clrscr();
+printf("Enter a number:");
+scanf("%d",&n);
+    original=n;
+    int temp=n;
+        while(temp!=0)
+        {
+            digits++;
+            temp=temp/10;
+        }
+if(sum==original)
+{
+printf("%d is an Armstrong number.\n",original);
 }
-if(y==a)
-printf("armstrong");
 else
-printf("not armstrong");
+printf("%d is not an Armstrong number.\n",original);
 }
+
 
     </pre>
     <h3>Output:</h3>
