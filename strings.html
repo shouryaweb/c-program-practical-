@@ -21,7 +21,7 @@
    <section class="question-card">
     <div class="question-title">
      <h2 class="question-heading">
-      1. Enter a string from user and convert in uppercase ?
+      1. Enter a string from the user and convert in uppercase?
      </h2>
     </div>
     <div class="code-panel">
@@ -30,22 +30,28 @@
      </div>
     </div>
     <pre>
-#include &lt;stdio.h&gt;
-#include &lt;Strings.h&gt;
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;string.h&gt;
 
-void main(){
-char str[50];
-int i;
-printf("Enter any sentence you like: ");
-gets(str);
-for(i=0;str[i];i++){
-if(str[i]&gt;='a'&amp;&amp; str[i]&lt;='z'){
-str[i]=str[i]-32;
+void main()
+{
+    char word[50];
+    int n, len;
+    clrscr();
+    printf("Enter a string: ");
+    gets(word);
+    len = strlen(word);
+    for(n=0; n&lt;len; n++)
+    {
+        if(word[n]&gt;='a' &amp;&amp; word[n]&lt;='z')
+        {
+            word[n] = word[n] - 32;
+        }
+    }
+    printf("Uppercase string: %s\n", word);
+    getch();
 }
-}
-printf("Here is the uppercase version of it: %s",str);
-}
-
     </pre>
     <div class="output-panel">
      <div class="panel-label">
@@ -53,14 +59,15 @@ printf("Here is the uppercase version of it: %s",str);
      </div>
     </div>
     <pre>
-Enter any sentence you like:Hello World
-Here is the uppercase version of it:Hello World
+Enter a string: hello bca
+Uppercase string: HELLO BCA
     </pre>
    </section>
+
    <section class="question-card">
     <div class="question-title">
      <h2 class="question-heading">
-      2. Enter a string from user and convert into lowercase ?
+      2. Enter a string from the user and convert in lowercase?
      </h2>
     </div>
     <div class="code-panel">
@@ -69,20 +76,27 @@ Here is the uppercase version of it:Hello World
      </div>
     </div>
     <pre>
-#include &lt;stdio.h&gt;
-#include &lt;Strings.h&gt;
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;string.h&gt;
 
-void main(){
-char str[50];
-int i;
-printf("Enter any sentence you like: ");
-gets(str);
-for(i=0;str[i];i++){
-if(str[i]&gt;='A'&amp;&amp; str[i]&lt;='Z'){
-str[i]=str[i]+32;
-}
-}
-printf("Here is the uppercase version of it: %s",str);
+void main()
+{
+    char word[50];
+    int n, len;
+    clrscr();
+    printf("Enter a string: ");
+    gets(word);
+    len = strlen(word);
+    for(n=0; n&lt;len; n++)
+    {
+        if(word[n]&gt;='A' &amp;&amp; word[n]&lt;='Z')
+        {
+            word[n] = word[n] + 32;
+        }
+    }
+    printf("Lowercase string: %s\n", word);
+    getch();
 }
     </pre>
     <div class="output-panel">
@@ -91,10 +105,11 @@ printf("Here is the uppercase version of it: %s",str);
      </div>
     </div>
     <pre>
-Enter any sentence you like: SARAHH
-Here is the uppercase version of it: sarahh
+Enter a string: HELLO BCA
+Lowercase string: hello bca
     </pre>
    </section>
+
    <section class="question-card">
     <div class="question-title">
      <h2 class="question-heading">
