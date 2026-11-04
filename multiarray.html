@@ -210,30 +210,49 @@ Subtraction Matrix:
     </div>
     <pre>
 #include &lt;stdio.h&gt;
-void main() {
-    int m1[2][2], m2[2][2], prod[2][2], r, c, t;
-    printf("Enter  numbers in matrix- ");
-    for(r=0;r&lt;2;r++)
-        for(c=0;c&lt;2;c++)
-            scanf("%d",&amp;m1[r][c]);
-    printf("Enter  numbers  matrix: ");
-    for(r=0;r&lt;2;r++)
-        for(c=0;c&lt;2;c++)
-            scanf("%d",&amp;m2[r][c]);
-    for(r=0;r&lt;2;r++){
-        for(c=0;c&lt;2;c++){
-            prod[r][c]=0;
-            for(t=0;t&lt;2;t++)
-                prod[r][c] += m1[r][t]*m2[t][c];
-        }
-    }
-    printf("Multiplication Matrix\n");
-    for(r=0;r&lt;2;r++){
-        for(c=0;c&lt;2;c++)
-            printf("%d\t", prod[r][c]);
-        printf("\n");
-    }
-}
+
+void main()
+{ 
+    int a[10][10],b[10][10],mul[10][10];
+    int i,j,row,col;
+    clrscr();
+printf("Enter rows and columns: ");
+scanf("%d %d",&row,&col);
+printf("Enter elements of first matrix: \n");
+	for(i=0;i<row;i++)
+	{
+	       for(j=0;j<col;j++)
+	       {
+		printf("a[%d][%d]= ",i,j);
+		scanf("%d",&a[i][j]);
+		}
+
+	 }
+printf("Enter elements of second matrix: \n");
+	for(i=0;i<row;i++)
+	{
+	      for(j=0;j<col;j++);
+	      {
+	       printf("b[%d][%d]= ",i,j);
+	       scanf("%d",&b[i][j]);
+	       }
+	 }
+ for(i=0;i<row;i++)
+ {
+      for(j=0;j<col;j++)
+      {
+      mul[i][j] = a[i][j]*b[i][j];
+      }
+  }
+printf("\n result of the matrix after multiplication: \n");
+  for(i=0;i<row;i++)
+ {
+      for(j=0;j<col;j++)
+      {
+      printf("%d\t",sub[i][j]);
+      }
+	printf("\n");
+  }
     </pre>
     <div class="output-panel">
      <div class="panel-label">
