@@ -188,10 +188,28 @@ enter number: 10
     </div>
     <pre>
 #include &lt;stdio.h&gt;
-int arr[100];
-int *ar(int n) {
-    for(int i=0;i<n;i++) ");="" ",="" &n);="" *nar="ar(n);" <="" are:="" arr;="" array:="" element:="" elements="" for(int="" i="" i++)="" int="" main()="" n;="" nar[i]);="" of="" pre="" printf("%d="" printf("array="" printf("enter="" return="" scanf("%d",="" scanf("%d",&arr[i]);="" size="" void="" {="" }="">
-    <h3>Output:</h3>
+int*getarray()
+{
+int arr[5];
+int i;
+printf("enter 5 numbers:\n");
+for(i=0;i<5;i++)
+{ scanf("%d",&arr[i] );
+}
+return arr;
+}
+void main()
+{
+int *ptr;
+int i;
+clrscr();
+ptr=getarray();
+printf("The array element are:");
+for(i=0;i<5;i++)
+{
+printf("%d",ptr[i]);
+}
+}
     <pre>
  Enter size of array: 5
 Enter element: 1
