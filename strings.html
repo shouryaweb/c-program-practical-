@@ -672,7 +672,7 @@ void main()
 Enter a string: Hello World
 vowels count :3
     </pre>
-   </section>
+  </section>
 
    <!-- QUESTION 17 -->
    <section class="question-card">
@@ -685,8 +685,7 @@ vowels count :3
      <div class="panel-label">
       Code
      </div>
-    </div>
-    <pre>
+    </div>   <pre>
 #include&lt;stdio.h&gt;
 #include&lt;conio.h&gt;
 #include&lt;string.h&gt;
@@ -696,8 +695,7 @@ void main()
     char sentence[100];
     int place;
     clrscr();
-    printf("Enter a string: ");
-    fgets(sentence,sizeof(sentence),stdin);
+    printf("Enter a string: ");   fgets(sentence,sizeof(sentence),stdin);
     sentence[strcspn(sentence,"\n")]=0;
     printf("Enter the bound (index): ");
     scanf("%d",&amp;place);
@@ -706,7 +704,7 @@ void main()
         printf("Character at index %d: %c\n",place,sentence[place]);
     }
     else
-    {
+   {
         printf("Invalid index.index out of bounds.\n");
     }
 }
@@ -720,7 +718,7 @@ void main()
 Enter a string: computer
 Enter the bound (index): 3
 Character at index 3: p
-    </pre>
+   </pre>
    </section>
 
    <!-- QUESTION 18 -->
@@ -751,8 +749,7 @@ void main()
     n=strlen(word);
     for(k=0;k&lt;n;k++)
     {
-        rev[k]=word[n-1-k];
-    }
+        rev[k]=word[n-1-k]   }
     rev[n]='\0';
     if(strcmp(word,rev)==0)
     {
@@ -764,8 +761,7 @@ void main()
     }
 }
     </pre>
-    <div class="output-panel">
-     <div class="panel-label">
+    <div class="output-panel">    <div class="panel-label">
       Output
      </div>
     </div>
@@ -775,15 +771,13 @@ madam is a palindrome
     </pre>
    </section>
 
-   <!-- QUESTION 19 -->
-   <section class="question-card">
+   <!-- QUESTION 19 -->   <section class="question-card">
     <div class="question-title">
      <h2 class="question-heading">
       19. Enter the data from the user, the data consists of roll no., name, class, marks of 5 subjects
      </h2>
     </div>
-    <div class="code-panel">
-     <div class="panel-label">
+    <div class="code-panel">     <div class="panel-label">
       Code
      </div>
     </div>
@@ -793,8 +787,7 @@ madam is a palindrome
 
 void main()
 {
-    int rn,sub[5],k,sum=0;
-    char sname[50],cls[20];
+    int rn,sub[5],k,sum=0;    char sname[50],cls[20];
     float avg;
     clrscr();
     printf("Enter roll number: ");
@@ -802,22 +795,20 @@ void main()
 
     printf("Enter name:");
     scanf("%s",sname);
-
     printf("Enter class:");
     scanf("%s",cls);
 
     printf("Enter marks of 5 subjects: \n");
-    for(k=0;k&lt;5;k++)
-    {
+    for(k=0;k&lt;5;k++)    {
         printf("subject %d:",k+1);
         scanf("%d",&amp;sub[k]);
         sum+=sub[k];
     }
-    avg=sum/5.0;
+   avg=sum/5.0;
 
-    printf("\n---Student Details---\n");
-    printf("Roll No: %d\n",rn);
-    printf("Name: %s\n",sname);
+  printf("\n---Student Details---\n"); 
+     printf("Roll No: %d\n",rn);
+   printf("Name: %s\n",sname);
     printf("Class: %s\n",cls);
     printf("Total Marks: %d\n",sum);
     printf("Average Marks: %.2f\n",avg);
