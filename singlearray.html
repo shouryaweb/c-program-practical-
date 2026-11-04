@@ -404,24 +404,32 @@ Sum of all the values: 15
       </h3>
       <pre>
 #include &lt;stdio.h&gt;
-void main(){
-int array[5],i,c;
-printf("Enter the array: \n");
-for(i=0;i&lt;5;i++){
-fflush(stdin);
-printf("%d.)Value: ",i+1);
-scanf("%d",&amp;array[i]);
-}
-printf("Enter the value to search: ");
-scanf("%d",&amp;c);
-for(i=0;i&lt;5;i++){
-if(array[i]==c){
-printf("Found");
-goto jump;
-}
-}
-printf("not found");
-jump:
+
+void main()
+{
+int arr[5],i,value,found=0;
+clrscr();
+       printf("Enter 5 elements: \n");
+	for(i=0;i<5;i++)
+	{
+	scanf("%d",&arr[i]);
+	}
+  printf("Enter value to search: ");
+  scanf("%d",&value);
+  for(i=0;i<5;i++)
+  {
+  if(arr[i]==value)
+  {
+  found=1;
+  break;
+  }
+  }
+    if(found==1)
+    {
+      printf("Found\n");
+    }
+else
+printf("not found\n");
 }
 </pre>
       <h3>
