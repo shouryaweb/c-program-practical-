@@ -1,0 +1,150 @@
+<html>
+ <head>
+  <title>
+   C CODE HUB
+  </title>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body class="topic-page">
+  <header class="site-header">
+   <a class="home-link" href="cpractical.html">
+    ← Home
+   </a>
+   <h1 class="page-title">
+    POINTERS
+   </h1>
+  </header>
+  <main class="content">
+   <br/>
+   <br/>
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      1. Write a program to enter 5 values in an array using pointer and print them.
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+
+void main()
+{
+    int nums[5];
+    int *ptr;
+    int k;
+
+    ptr = &amp;nums[0];
+
+    printf("Enter 5 values:\n");
+    for (k = 0; k &lt; 5; k++)
+    {
+        printf("Value %d: ", k + 1);
+        scanf("%d", ptr);
+        ptr++;
+    }
+
+    ptr = &amp;nums[0];
+
+    printf("\nValues entered are:\n");
+    for (k = 0; k &lt; 5; k++)
+    {
+        printf("%d\n", *ptr);
+        ptr++;
+    }
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter 5 values:
+Value 1: 10
+Value 2: 20
+Value 3: 30
+Value 4: 40
+Value 5: 50
+
+Values entered are:
+10
+20
+30
+40
+50
+    </pre>
+   </section>
+
+   <section class="question-card">
+    <div class="question-title">
+     <h2 class="question-heading">
+      2. Write a program to enter values in a 2D array using a pointer and print the matrix.
+     </h2>
+    </div>
+    <div class="code-panel">
+     <div class="panel-label">
+      Code
+     </div>
+    </div>
+    <pre>
+#include &lt;stdio.h&gt;
+
+void main()
+{
+    int mat[2][3];
+    int *ptr;
+    int k;
+
+    ptr = &amp;mat[0][0];
+
+    printf("Enter 6 values for 2x3 matrix:\n");
+    for (k = 0; k &lt; 6; k++)
+    {
+        printf("Value %d: ", k + 1);
+        scanf("%d", ptr);
+        ptr++;
+    }
+
+    ptr = &amp;mat[0][0];
+
+    printf("\nMatrix is:\n");
+    for (k = 0; k &lt; 6; k++)
+    {
+        printf("%d\t", *ptr);
+        ptr++;
+        if ((k + 1) % 3 == 0)
+        {
+            printf("\n");
+        }
+    }
+}
+    </pre>
+    <div class="output-panel">
+     <div class="panel-label">
+      Output
+     </div>
+    </div>
+    <pre>
+Enter 6 values for 2x3 matrix:
+Value 1: 1
+Value 2: 2
+Value 3: 3
+Value 4: 4
+Value 5: 5
+Value 6: 6
+
+Matrix is:
+1       2       3
+4       5       6
+    </pre>
+   </section>
+
+  </main>
+ </body>
+</html>
