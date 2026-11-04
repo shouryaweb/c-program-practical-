@@ -116,25 +116,49 @@ Enter 4 numbers for 2x2 matrix: 1 6 89 10
     </div>
     <pre>
 #include &lt;stdio.h&gt;
-void main() {
-    int first[2][2], second[2][2], total[2][2], r, c;
-    printf("Enter  numbers for first matrix: ");
-    for(r=0;r&lt;2;r++)
-        for(c=0;c&lt;2;c++)
-            scanf("%d",&amp;first[r][c]);
-    printf("Enter  numbers for second matrix: ");
-    for(r=0;r&lt;2;r++)
-        for(c=0;c&lt;2;c++)
-            scanf("%d",&amp;second[r][c]);
-    for(r=0;r&lt;2;r++)
-        for(c=0;c&lt;2;c++)
-            total[r][c] = first[r][c] + second[r][c];
-    printf("Sum Matrix:\n");
-    for(r=0;r&lt;2;r++){
-        for(c=0;c&lt;2;c++)
-            printf("%d\t", total[r][c]);
-        printf("\n");
-    }
+void main()
+{
+int a[10][10],b[10][10],sum[10][10];
+int row,col,i,j;
+clrscr();
+printf("Enter rows and columns: ");
+scanf("%d %d",&row,&col);
+printf("Enter elements of first matrix: \n");
+	for(i=0;i<row;i++)
+	{
+	       for(j=0;j<col;j++)
+	       {
+		printf("First matrix element%d %d:",i+1,j+1);
+		scanf("%d",&a[i][j]);
+		}
+
+	 }
+printf("Enter elements of second matrix: \n");
+	for(i=0;i<row;i++)
+	{
+	      for(j=0;j<col;j++);
+	      {
+	       printf("second matrix element%d %d:",i + 1,j + 1);
+	       scanf("%d",&b[i][j]);
+	       }
+	 }
+ for(i=0;i<row;i++)
+ {
+      for(j=0;j<col;j++)
+      {
+      sum[i][j]=a[i][j]+b[i][j];
+      }
+  }
+printf("\n Sum of the two matrices: \n");
+  for(i=0;i<row;i++)
+ {
+      for(j=0;j<col;j++)
+      {
+      printf("%d",sum[i][j]);
+      }
+	printf("\n");
+  }
+}
 }
     </pre>
     <div class="output-panel">
